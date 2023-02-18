@@ -37,7 +37,8 @@ logging.basicConfig(level=logging.DEBUG)
 
 slack_app = AsyncApp(
     token=config('SLACK_BOT_TOKEN'),
-    signing_secret=config('SLACK_SIGNING_SECRET')
+    signing_secret=config('SLACK_SIGNING_SECRET'),
+    request_verification_enabled=False
 )
 app_handler = AsyncSlackRequestHandler(slack_app)
 
